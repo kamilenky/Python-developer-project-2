@@ -53,28 +53,30 @@ class Requirements:
         self.reasons = reasons
 
 class JobTenureProlonged:
-    def __init__(self, tenure_prolonged: str, days: int) -> None:
-        self.tenure_prolonged = tenure_prolonged
+    def __init__(self, prolonged_tenure: str, days: int) -> None:
+        self.prolonged_tenure = prolonged_tenure
+        self.days = days
+
+class JobTenureShortened:
+    def __init__(self, shortened_tenure:str, days: int) -> None:
+        self.shortened_tenure = shortened_tenure
         self.days = days
 
 
-tenure_factors = [
-    JobTenureProlonged(tenure_prolonged="ospravedlnená neprítomnosť zamestnanca", days=5),
-    JobTenureProlonged(tenure_prolonged="neospravedlnená neprítomnosť zamestnanca", days=1),
-    JobTenureProlonged(tenure_prolonged="výkon mimoriadnej služby", days=1),
-    JobTenureProlonged(tenure_prolonged="výkon väzby alebo nepodmienečného trestu odňatia slobody", days=0)
+reasons = [
+    JobTenureProlonged(prolonged_tenure="ospravedlnená neprítomnosť zamestnanca", days=5),
+    JobTenureProlonged(prolonged_tenure="neospravedlnená neprítomnosť zamestnanca", days=1),
+    JobTenureProlonged(prolonged_tenure="výkon mimoriadnej služby", days=1),
+    JobTenureProlonged(prolonged_tenure="výkon väzby alebo nepodmienečného trestu odňatia slobody", days=0),
+    JobTenureShortened(shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu", days=30)
 ]
 
-requirements = Requirements(reasons=tenure_factors)
+requirements = Requirements(reasons=reasons)
 print(requirements)
 
 
 
 class JobTenureDays:
-    pass
-
-
-class JobTenureShortened:
     pass
 
 
