@@ -1,13 +1,128 @@
 # employee data
 
 class EmployeeData:
-    def ReturnEmployeeDataClass(self):
+    def ReturnEmployeeData
         pass
+        get_data = input --> Y/N
+        return dict
 
+    #output: zobrazi  tabulku  zamestnancov
 
-class EmployeeName:
     def ReturnEmployeeName(self):
         pass
+        get_id = input --> id/name
+        print()
+    #zobrai zamestnanca a riradene data: meno, priezvisko, pracovne zaradenie, pracovny uvazok, vyska prispevku v hrubom, vyska prispevku v cistom, zaciatok zmluvy
+
+
+
+
+# amendement requirements
+class Requirements:
+    def __init__(self, reasons: list) -> None:
+        self.reasons = reasons
+        #zostavi list podmienok pre pre predlzenie zmluvy/skratenie zmluvy
+
+    def get_list_of_requirements(self):
+        pass
+        get_list_req = input --> print("Zobrazit zoznam podmienok pre vratenie prispevku?" Y/N)
+        if yes --> zobrazi list podmienok
+        if no --> print("Vratit sa na tabulku zamestnancov?")
+            if yes ---> vrati sa na tabulku zamestnancov
+            if no ---> skonci program
+
+        #vyhodnoti vstupy pre zobrazenie podmienok
+
+
+    def list_requirements(self):
+        reason in self.reasons:
+            reason.set_reason()
+
+        #vypise vsetky podmienky pre skratenie a predlzenie doby zotrvania zamestnanca v pracovnom pomere
+
+    def choose_requirement(self):
+        pass
+    # uzivatel vyberie podmienku
+
+    def print_reason(self) -> None:
+        print(f"Dovod nepritomnosti je {self.prolonged_tenure}")
+        # vypise podmienky pre skratenie a predlzenie doby zotrvania zamestnanca v pracovnom pomere
+
+
+class JobTenureProlonged:
+    def __init__(self, prolonged_tenure: str, days: int) -> None:
+        self.prolonged_tenure = prolonged_tenure
+        self.days = days
+
+    def choose_reason(self):
+        pass
+
+    def add_days(self):
+        pass
+
+reasons_1 = [
+    JobTenureProlonged(prolonged_tenure="ospravedlnená neprítomnosť zamestnanca"),
+    JobTenureProlonged(prolonged_tenure="neospravedlnená neprítomnosť zamestnanca"),
+    JobTenureProlonged(prolonged_tenure="výkon mimoriadnej služby"),
+    JobTenureProlonged(prolonged_tenure="výkon väzby alebo nepodmienečného trestu odňatia slobody"),
+    JobTenureShortened(shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu")
+]
+
+
+class JobTenureShortened:
+    def __init__(self, shortened_tenure:str, days: int) -> None:
+        self.shortened_tenure = shortened_tenure
+        self.days = days
+
+
+reasons_2= [
+    JobTenureShortened(shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu")
+JobTenureShortened(shortened_tenure="na žiadosť zamestnanca je zamestnancovi znížený jeho pracovný úväzok pod dohodnutý úväzok ")
+JobTenureShortened(shortened_tenure="okamžitého skončenia pracovného pomeru zamestnávateľom")
+]
+
+
+class RepaymentObligation
+    pass
+#vypise podmineky, kedy sa prispevok nekrati
+
+reasons_3= [...]
+
+
+
+
+
+
+
+#
+# requirements = Requirements(reasons=reasons)
+# print(requirements)
+# reasons.list_requirements()
+
+
+
+
+
+
+
+# other
+
+class ContractDates:
+    pass
+# vrati datum - zaciatok zmluvu
+# vrati datum - ukoncenie zmluvy
+
+
+class CalculateJobTenurePeriod:
+    pass
+#vypocita dlzku pavoneho pomeru v dnoch, vyhodnoti datum zaciatku a ukoncenia zmluvy, vyhodoti podmienky
+#vrati rozdiel medzi dohodnutou dlzkou pracovneho pomeru a skutocnou dlzkou PP
+
+
+class CalculateContributionAmount:
+    pass
+#vyhodnoti
+
 
 
 class JobClassification:
@@ -58,61 +173,3 @@ class ContributionAmount:
 
     def SetReduced(self):
         pass
-
-
-
-# amendement requirements
-class Requirements:
-    def __init__(self, reasons: list) -> None:
-        self.reasons = reasons
-        #zostavi list podmienok pre pre predlzenie zmluvy/skratenie zmluvy
-
-
-
-class JobTenureProlonged:
-    def __init__(self, prolonged_tenure: str, days: int) -> None:
-        self.prolonged_tenure = prolonged_tenure
-        self.days = days
-        # zvaliduje podmienku pre predlzenie zmluvy
-
-class JobTenureShortened:
-    def __init__(self, shortened_tenure:str, days: int) -> None:
-        self.shortened_tenure = shortened_tenure
-        self.days = days
-
-        # zvaliduje podmienku pre predlzenie zmluvy
-
-
-reasons = [
-    JobTenureProlonged(prolonged_tenure="ospravedlnená neprítomnosť zamestnanca", days=5),
-    JobTenureProlonged(prolonged_tenure="neospravedlnená neprítomnosť zamestnanca", days=1),
-    JobTenureProlonged(prolonged_tenure="výkon mimoriadnej služby", days=1),
-    JobTenureProlonged(prolonged_tenure="výkon väzby alebo nepodmienečného trestu odňatia slobody", days=0),
-    JobTenureShortened(shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu", days=30)
-]
-
-requirements = Requirements(reasons=reasons)
-print(requirements)
-
-
-
-class JobTenureDays:
-    pass
-
-
-class EmployeeSideObstacles:
-    pass
-
-
-# other
-
-class ContractDates:
-    pass
-
-
-class CalculateJobTenurePeriod:
-    pass
-
-
-class CalculateContributionAmount:
-    pass
