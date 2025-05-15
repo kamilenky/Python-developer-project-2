@@ -89,19 +89,10 @@ class RepaymentObligation
 reasons_3= [...]
 
 
-
-
-
-
-
 #
 # requirements = Requirements(reasons=reasons)
 # print(requirements)
 # reasons.list_requirements()
-
-
-
-
 
 
 
@@ -121,55 +112,47 @@ class CalculateJobTenurePeriod:
 
 class CalculateContributionAmount:
     pass
-#vyhodnoti
+#vrati cast stabilizacneho prispevku urcenu na vratenie zamestnavatelovi
 
-
-
-class JobClassification:
-    def __init__(self, job_classification: str, working_hours: int) -> None:
-        self.job_classificaiton = job_classification
-        self.working_hours = working_hours
-        # priradi pracovne zaradenie zamestnancovi
-
-    def AssignJobClassification(self) -> None:
-        print(f"Pracovné zaradenienie: {self.job_classificaiton}")
-
-    def AssignWorkingHours(self) -> None:
-        print(f"Pracovný uväzok: {self.working_hours}")
-
-    def assign_contribution_rate(self):
-        full_contribution = 100
-        if job_classification=="Sociálny pracovník":
-            return full_contribution*1
-        elif job_classification=="Opatrovateľ":
-            return full_contribution*0.5
-
-
-
-
-job_title_1 = JobClassification(job_classification="Sociálny pracovník", working_hours=40)
-job_title_2 = JobClassification(job_classification="Opatrovateľ", working_hours=20)
-
-job_title_1.AssignJobClassification()
-job_title_1.AssignWorkingHours()
-job_title_2.AssignJobClassification()
-job_title_2.AssignWorkingHours()
-
-
-
-
-
-
-
-
-class EmployementType:
-    def AssignEmployementType(self):
-        print("Part-time")
-
-
-class ContributionAmount:
-    def SetFull(self):
+    def set_in_gros(self):
         pass
 
-    def SetReduced(self):
+    def set_in_net(self):
         pass
+
+
+
+# class JobClassification:
+#     def __init__(self, job_classification: str, working_hours: int) -> None:
+#         self.job_classificaiton = job_classification
+#         self.working_hours = working_hours
+#         # priradi pracovne zaradenie zamestnancovi
+#
+#     def AssignJobClassification(self) -> None:
+#         print(f"Pracovné zaradenienie: {self.job_classificaiton}")
+#
+#     def AssignWorkingHours(self) -> None:
+#         print(f"Pracovný uväzok: {self.working_hours}")
+#
+#     def assign_contribution_rate(self):
+#         full_contribution = 100
+#         if job_classification=="Sociálny pracovník":
+#             return full_contribution*1
+#         elif job_classification=="Opatrovateľ":
+#             return full_contribution*0.5
+#
+#
+#
+#
+# job_title_1 = JobClassification(job_classification="Sociálny pracovník", working_hours=40)
+# job_title_2 = JobClassification(job_classification="Opatrovateľ", working_hours=20)
+#
+# job_title_1.AssignJobClassification()
+# job_title_1.AssignWorkingHours()
+# job_title_2.AssignJobClassification()
+# job_title_2.AssignWorkingHours()
+
+
+
+
+
