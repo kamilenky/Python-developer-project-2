@@ -27,6 +27,9 @@ class EmployeeData:
             else:
                 print("Čauko, koniec programu.")
 
+        except ValueError as error:
+            print("Nespravny údaj.", error)
+
 
     # output: zobrazi  tabulku  zamestnancov
 
