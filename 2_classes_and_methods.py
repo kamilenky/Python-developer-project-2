@@ -1,52 +1,88 @@
-# employee data
+# the program asks for employee data input, displays employee data list or raises the exceptions
 
 class EmployeeData:
-    def ReturnEmployeeData
-        pass
-        get_data = input --> Y/N
-        return dict
+    def __init__(self, data):
+            self.data = data
 
-    #output: zobrazi  tabulku  zamestnancov
+    def show_data(self, show_employees):
+        try:
+                show_employees = input(f"Zobraziť zoznam zamestnancov (a/n): ")
 
-    def ReturnEmployeeName(self):
-        pass
-        get_id = input --> id/name
-        print()
-    #zobrai zamestnanca a riradene data: meno, priezvisko, pracovne zaradenie, pracovny uvazok, vyska prispevku v hrubom, vyska prispevku v cistom, zaciatok zmluvy
+        except ValueError:
+            print("Nespravny údaj.")
+            show_employees = None
+            continue
+
+        show_employees in ["a", "n"]
+            if show_employees = "a"
+            return return_employee_data()
+
+            else:
+            except ValueError:
+            print("Čauko, koniec programu.")
 
 
+    def return_employee_data(self):
+        for employee in employee_data:
+            print(employee["name"], employee["surname"], employee["job_classification"],
+              employee["contribution_amount_gross"], employee["contribution_amount_net"])
+
+    # output: zobrazi  tabulku  zamestnancov
+
+employee_data = [
+    {"name": "Asterix", "surname": "Galois", "job_classification": "Opatrovateľ", "contribution_amount_gross": 2000,
+     "contribution_amount_net": 1620},
+    {"name": "Obelix", "surname": "Gal", "job_classification": "Sociálny pracovník", "contribution_amount_gross": 1500,
+     "contribution_amount_net": 1620},
+    {"name": "Scoobee", "surname": "Doo", "job_classification": "Inštruktor sociálnej rehabilitácie",
+     "contribution_amount_gross": 2000, "contribution_amount_net": 1215}
+]
+
+
+def ReturnEmployeeName(self):
+    pass
+    # get_id = input --> id / name
+    # print()
+
+
+# zobrai zamestnanca a riradene data: meno, priezvisko, pracovne zaradenie, pracovny uvazok, vyska prispevku v hrubom, vyska prispevku v cistom, zaciatok zmluvy
 
 
 # amendement requirements
 class Requirements:
     def __init__(self, reasons: list) -> None:
         self.reasons = reasons
-        #zostavi list podmienok pre pre predlzenie zmluvy/skratenie zmluvy
+        # zostavi list podmienok pre pre predlzenie zmluvy/skratenie zmluvy
 
     def get_list_of_requirements(self):
         pass
-        get_list_req = input --> print("Zobrazit zoznam podmienok pre vratenie prispevku?" Y/N)
-        if yes --> zobrazi list podmienok
-        if no --> print("Vratit sa na tabulku zamestnancov?")
-            if yes ---> vrati sa na tabulku zamestnancov
-            if no ---> skonci program
+        # get_list_req = input --> print("Zobrazit zoznam podmienok pre vratenie prispevku?"
+        # Y / N)
+        # if yes --> zobrazi list podmienok
+        # if no --> print("Vratit sa na tabulku zamestnancov?")
+        # if yes - --> vrati sa na tabulku zamestnancov
+        # if no - --> skonci program
 
-        #vyhodnoti vstupy pre zobrazenie podmienok
+
+# vyhodnoti vstupy pre zobrazenie podmienok
 
 
-    def list_requirements(self):
-        reason in self.reasons:
-            reason.set_reason()
+def list_requirements(self):
+    reason in self.reasons:
+    reason.set_reason()
 
-        #vypise vsetky podmienky pre skratenie a predlzenie doby zotrvania zamestnanca v pracovnom pomere
 
-    def choose_requirement(self):
-        pass
-    # uzivatel vyberie podmienku
+# vypise vsetky podmienky pre skratenie a predlzenie doby zotrvania zamestnanca v pracovnom pomere
 
-    def print_reason(self) -> None:
-        print(f"Dovod nepritomnosti je {self.prolonged_tenure}")
-        # vypise podmienky pre skratenie a predlzenie doby zotrvania zamestnanca v pracovnom pomere
+def choose_requirement(self):
+    pass
+
+
+# uzivatel vyberie podmienku
+
+def print_reason(self) -> None:
+    print(f"Dovod nepritomnosti je {self.prolonged_tenure}")
+    # vypise podmienky pre skratenie a predlzenie doby zotrvania zamestnanca v pracovnom pomere
 
 
 class JobTenureProlonged:
@@ -60,6 +96,7 @@ class JobTenureProlonged:
     def add_days(self):
         pass
 
+
 reasons_1 = [
     JobTenureProlonged(prolonged_tenure="ospravedlnená neprítomnosť zamestnanca"),
     JobTenureProlonged(prolonged_tenure="neospravedlnená neprítomnosť zamestnanca"),
@@ -70,24 +107,26 @@ reasons_1 = [
 
 
 class JobTenureShortened:
-    def __init__(self, shortened_tenure:str, days: int) -> None:
+    def __init__(self, shortened_tenure: str, days: int) -> None:
         self.shortened_tenure = shortened_tenure
         self.days = days
 
 
-reasons_2= [
+reasons_2 = [
     JobTenureShortened(shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu")
-JobTenureShortened(shortened_tenure="na žiadosť zamestnanca je zamestnancovi znížený jeho pracovný úväzok pod dohodnutý úväzok ")
-JobTenureShortened(shortened_tenure="okamžitého skončenia pracovného pomeru zamestnávateľom")
+    JobTenureShortened(
+        shortened_tenure="na žiadosť zamestnanca je zamestnancovi znížený jeho pracovný úväzok pod dohodnutý úväzok ")
+    JobTenureShortened(shortened_tenure="okamžitého skončenia pracovného pomeru zamestnávateľom")
 ]
 
 
 class RepaymentObligation
     pass
-#vypise podmineky, kedy sa prispevok nekrati
 
-reasons_3= [...]
 
+# vypise podmineky, kedy sa prispevok nekrati
+
+reasons_3 = [...]
 
 
 # requirements = Requirements(reasons=reasons)
@@ -95,32 +134,34 @@ reasons_3= [...]
 # reasons.list_requirements()
 
 
-
 # other
 
 class ContractDates:
     pass
+
+
 # vrati datum - zaciatok zmluvu
 # vrati datum - ukoncenie zmluvy
 
 
 class CalculateJobTenurePeriod:
     pass
-#vypocita dlzku pavoneho pomeru v dnoch, vyhodnoti datum zaciatku a ukoncenia zmluvy, vyhodoti podmienky
-#vrati rozdiel medzi dohodnutou dlzkou pracovneho pomeru a skutocnou dlzkou PP
+
+
+# vypocita dlzku pavoneho pomeru v dnoch, vyhodnoti datum zaciatku a ukoncenia zmluvy, vyhodoti podmienky
+# vrati rozdiel medzi dohodnutou dlzkou pracovneho pomeru a skutocnou dlzkou PP
 
 
 class CalculateContributionAmount:
     pass
-#vrati cast stabilizacneho prispevku urcenu na vratenie zamestnavatelovi
+
+    # vrati cast stabilizacneho prispevku urcenu na vratenie zamestnavatelovi
 
     def set_in_gros(self):
         pass
 
     def set_in_net(self):
         pass
-
-
 
 # class JobClassification:
 #     def __init__(self, job_classification: str, working_hours: int) -> None:
@@ -151,8 +192,3 @@ class CalculateContributionAmount:
 # job_title_1.AssignWorkingHours()
 # job_title_2.AssignJobClassification()
 # job_title_2.AssignWorkingHours()
-
-
-
-
-
