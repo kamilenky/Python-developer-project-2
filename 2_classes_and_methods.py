@@ -40,6 +40,9 @@ employee_data = [
      "contribution_amount_gross": 2000, "contribution_amount_net": 1215}
 ]
 
+e = EmployeeData(employee_data)
+e.show_data()
+
 
 def ReturnEmployeeName(self):
     pass
