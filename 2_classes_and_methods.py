@@ -1,33 +1,34 @@
 # the program asks for employee data input, displays employee data list or raises the exceptions
+# input: y/n answer for displaying the data list
+# output: displays employee data list
 
 class EmployeeData:
     def __init__(self, data):
-            self.data = data
-
-    def show_data(self, show_employees):
-        try:
-                show_employees = input(f"Zobraziť zoznam zamestnancov (a/n): ")
-
-        except ValueError:
-            print("Nespravny údaj.")
-            show_employees = None
-            continue
-
-        show_employees in ["a", "n"]
-            if show_employees = "a"
-            return return_employee_data()
-
-            else:
-            except ValueError:
-            print("Čauko, koniec programu.")
-
+        self.data = data
 
     def return_employee_data(self):
         for employee in employee_data:
-            print(employee["name"], employee["surname"], employee["job_classification"],
-              employee["contribution_amount_gross"], employee["contribution_amount_net"])
+            print(
+                f"{employee["name"]}, {employee["surname"]}, 'Pracovné zaradenie:' {employee["job_classification"]}, 'Príspevok: '
+            {employee["contribution_amount_gross"]}, 'Príspevokv po zdanení: ' employee["contribution_amount_net"])
+
+    def show_data(self):
+        try:
+            show_employees = input("Zobraziť zoznam zamestnancov (a/n): ").strip().lower()
+
+            if show_employees not in ["a","n"]:
+                raise ValueError ("Nespravny údaj. Zadajte iba 'a' alebo 'n'")
+
+            if show_employees == "a":
+                self.return_employee_data()
+                return show_employees
+
+            else:
+                print("Čauko, koniec programu.")
+
 
     # output: zobrazi  tabulku  zamestnancov
+
 
 employee_data = [
     {"name": "Asterix", "surname": "Galois", "job_classification": "Opatrovateľ", "contribution_amount_gross": 2000,
