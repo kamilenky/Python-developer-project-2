@@ -9,8 +9,9 @@ class EmployeeData:
     def return_employee_data(self):
         for employee in employee_data:
             print(
-                f"{employee["name"]}, {employee["surname"]}, 'Pracovné zaradenie:' {employee["job_classification"]}, 'Príspevok: '
-            {employee["contribution_amount_gross"]}, 'Príspevokv po zdanení: ' employee["contribution_amount_net"])
+                f'{employee["name"]}, {employee["surname"]}, Pracovné zaradenie: {employee["job_classification"]}, '
+                f'Príspevok: {employee["contribution_amount_gross"]}, Príspevok po zdanení: {employee["contribution_amount_net"]}'
+            )
 
     def show_data(self):
         try:
