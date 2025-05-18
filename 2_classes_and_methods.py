@@ -2,7 +2,7 @@
 # # input: y/n answer for displaying the data list
 # # output: displays employee data list
 #
-# class EmployeeData:
+class EmployeeData:
 #     def __init__(self, data):
 #         self.data = data
 #
