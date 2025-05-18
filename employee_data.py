@@ -43,16 +43,16 @@ class EmployeeList:
 
 
 
-employee_data = [
-    EmployeeData(id=1, name="Asterix", surname= "Galois", job_classification="Opatrovateľ", contribution_amount_gross= 2000,
-     contribution_amount_net= 1620),
-    EmployeeData(id=2, name="Obelix", surname= "Gal", job_classification="Sociálny pracovník", contribution_amount_gross= 1500,
-     contribution_amount_net= 1215),
-    EmployeeData(id=3, name="Scoobee", surname= "Doo", job_classification="Inštruktor sociálnej rehabilitácie", contribution_amount_gross= 2000,
-     contribution_amount_net= 1620)
-]
-
-e = EmployeeList(employee_data)
-e.show_data()
+# employee_data = [
+#     EmployeeData(id=1, name="Asterix", surname= "Galois", job_classification="Opatrovateľ", contribution_amount_gross= 2000,
+#      contribution_amount_net= 1620),
+#     EmployeeData(id=2, name="Obelix", surname= "Gal", job_classification="Sociálny pracovník", contribution_amount_gross= 1500,
+#      contribution_amount_net= 1215),
+#     EmployeeData(id=3, name="Scoobee", surname= "Doo", job_classification="Inštruktor sociálnej rehabilitácie", contribution_amount_gross= 2000,
+#      contribution_amount_net= 1620)
+# ]
+#
+# e = EmployeeList(employee_data)
+# e.show_data()
 
 
