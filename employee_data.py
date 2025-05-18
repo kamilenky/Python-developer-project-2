@@ -5,7 +5,6 @@
 
 class EmployeeData:
     def __init__(self, id, name, surname, job_classification, contribution_amount_gross, contribution_amount_net):
-        self.employee_data = employee_data
         self.id = id
         self.name = name
         self.surname = surname
@@ -17,8 +16,11 @@ class EmployeeData:
         return  (f'Zamestnanec: {self.id},{self.name} {self.surname}, Pracovné zaradenie: {self.job_classification}, '
                 f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}')
 
+    def show_e_list(self, employee_list):
+        self.employee_list = employee_list
+
     def return_employee_data(self, employee_data):
-        for employee in self.employee_data:
+        for employee in self.employee_list:
            print(employee)
 
     def show_data(self):
@@ -50,5 +52,6 @@ employee_data = [
 ]
 
 e = EmployeeData(employee_data)
+e = EmployeeData(name, surname, job_classification, contribution_amount_gross, contribution_amount_net)
 e.show_data()
 
