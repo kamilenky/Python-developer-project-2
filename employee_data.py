@@ -12,9 +12,9 @@ class EmployeeData:
         self.contribution_amount_gross = contribution_amount_gross
         self.contribution_amount_net = contribution_amount_net
 
-    # def print_employees(self):
-    #     return  (f'Zamestnanec: {self.id},{self.name} {self.surname}, Pracovné zaradenie: {self.job_classification}, '
-    #             f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}')
+    def __str__(self):
+       return  (f'Zamestnanec: {self.id},{self.name} {self.surname}, Pracovné zaradenie: {self.job_classification}, '
+                f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}')
 
 class EmployeeList:
     def __init__(self, employee_list):
@@ -22,8 +22,7 @@ class EmployeeList:
 
     def return_employee_data(self):
         for employee in self.employee_list:
-           print(f'Zamestnanec: {employee.id},{employee.name} {employee.surname}, Pracovné zaradenie: {employee.job_classification}, '
-                f'Príspevok: {employee.contribution_amount_gross}, Príspevok po zdanení: {employee.contribution_amount_net}')
+           print(employee)
 
     def show_data(self):
         try:
