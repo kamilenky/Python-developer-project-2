@@ -16,10 +16,11 @@ class EmployeeData:
         return  (f'Zamestnanec: {self.id},{self.name} {self.surname}, Pracovné zaradenie: {self.job_classification}, '
                 f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}')
 
-    def show_e_list(self, employee_list):
+class EmployeeList:
+    def __init__(self, employee_list):
         self.employee_list = employee_list
 
-    def return_employee_data(self, employee_data):
+    def return_employee_data(self):
         for employee in self.employee_list:
            print(employee)
 
