@@ -4,7 +4,7 @@
 
 
 class EmployeeData:
-    def __init__(self, employee_data: list [id] [name][surname][job_classification][contribution_amount_gross][contribution_amount_net] ):
+    def __init__(self, id, name, surname, job_classification, contribution_amount_gross, contribution_amount_net):
         self.employee_data = employee_data
         self.id = id
         self.name = name
@@ -13,12 +13,13 @@ class EmployeeData:
         self.contribution_amount_gross = contribution_amount_gross
         self.contribution_amount_net = contribution_amount_net
 
+    def print_employees(self):
+        return  (f'Zamestnanec: {self.id},{self.name} {self.surname}, Pracovné zaradenie: {self.job_classification}, '
+                f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}')
+
     def return_employee_data(self, employee_data):
         for employee in self.employee_data:
-            print(
-                f'Zamestnanec: {self.id},{self.name}, {self.surname}, Pracovné zaradenie: {self.job_classification}, '
-                f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}'
-            )
+           print(employee)
 
     def show_data(self):
         try:
@@ -48,6 +49,6 @@ employee_data = [
      contribution_amount_net= 1620)
 ]
 
-e = EmployeeData(employee_data=employee_data)
+e = EmployeeData(employee_data)
 e.show_data()
 
