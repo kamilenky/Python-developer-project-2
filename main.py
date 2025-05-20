@@ -1,7 +1,7 @@
 # 1. the program asks for employee data input, displays employee data list, raises the exceptions
 from employee_data import EmployeeData
 from employee_data import EmployeeList
-from exceptions import InvalidInputError
+from exceptions import AppExceptions
 
 
 employee_data = [
@@ -18,5 +18,5 @@ try:
     e = EmployeeList(employee_data)
     e.show_data()
 
-except InvalidInputError as error:
+except AppExceptions.InvalidInputError as error:
     print("Nespravny údaj.", error)
