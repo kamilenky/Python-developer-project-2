@@ -1,12 +1,15 @@
-class InvalidInputError(Exception):
+class AppExceptions(Exception):
+    pass
+
+    class InvalidInputError(Exception):
         pass
 
-class CalculationError(Exception):
+    class CalculationError(Exception):
         pass
 
-class ZerodivisionError(Exception):
+    class ZerodivisionError(Exception):
         pass
 
-class ValueError(Exception):
+    class ValueError(Exception):
         pass
 
