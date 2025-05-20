@@ -1,6 +1,7 @@
 # 1. the program asks for employee data input, displays employee data list, raises the exceptions
 from employee_data import EmployeeData
 from employee_data import EmployeeList
+from exceptions import InvalidInputError
 
 
 employee_data = [
@@ -11,6 +12,11 @@ employee_data = [
     EmployeeData(id=3, name="Scoobee", surname= "Doo", job_classification="Inštruktor sociálnej rehabilitácie", contribution_amount_gross= 2000,
      contribution_amount_net= 1620)
 ]
+# exceptions for employee_data.py section
 
-e = EmployeeList(employee_data)
-e.show_data()
+try:
+    e = EmployeeList(employee_data)
+    e.show_data()
+
+except InvalidInputError as error:
+    print("Nespravny údaj.", error)
