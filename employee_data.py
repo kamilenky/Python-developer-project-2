@@ -2,6 +2,8 @@
 # input: y/n answer for displaying the data list
 # output: displays employee data list
 
+from exceptions import InvalidInputError
+
 
 class EmployeeData:
     def __init__(self, id, name, surname, job_classification, contribution_amount_gross, contribution_amount_net):
@@ -25,11 +27,11 @@ class EmployeeList:
            print(employee)
 
     def show_data(self):
-        try:
+        # try:
             show_employees = input("Zobraziť zoznam zamestnancov (a/n): ").strip().lower()
 
             if show_employees not in ["a","n"]:
-                raise ValueError ("Zadajte iba 'a' alebo 'n'")
+                raise InvalidInputError("Zadajte iba 'a' alebo 'n'")
 
             if show_employees == "a":
                 self.return_employee_data()
@@ -38,8 +40,8 @@ class EmployeeList:
             else:
                 print("Čauko, koniec programu.")
 
-        except ValueError as error:
-            print("Nespravny údaj.", error)
+        # except ValueError as error:
+        #     print("Nespravny údaj.", error)
 
 
 
