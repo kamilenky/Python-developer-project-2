@@ -1,0 +1,12 @@
+class InvalidInputError(Exception):
+        pass
+
+class CalculationError(Exception):
+        pass
+
+class ZerodivisionError(Exception):
+        pass
+
+class ValueError(Exception):
+        pass
+
