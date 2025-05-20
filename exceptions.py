@@ -13,3 +13,6 @@ class AppExceptions(Exception):
     class ValueError(Exception):
         pass
 
+    class MyOwnException(Exception):
+        pass
+
