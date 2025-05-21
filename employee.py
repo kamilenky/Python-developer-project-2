@@ -7,17 +7,19 @@
 from employee_data import EmployeeData
 from employee_data import EmployeeList
 from exceptions import AppExceptions
-from main import List
+
+
 
 
 class Employee:
-    def __init__(self, employee):
-        self.employee = employee
+    def __init__(self):
+        self.employee_data = employee_data
+
 
     def get_employee_by_id(self):
         try:
             emp_id = int(input("Zadajte ID zamestnanca: ").strip().lower())
-            selected_emp = next((e for e in EmployeeData if  e.id == emp_id), None)
+            selected_emp = next((e for e in employee_data if  e.id == emp_id), None)
 
             if selected_emp:
                 return EmployeeList.return_employee_data()
