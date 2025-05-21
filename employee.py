@@ -4,8 +4,10 @@
 # input: y/n answer for displaying the data list
 # output: displays employee data list
 
-from employee_data import EmployeeData
+from emplmployee_data import EmployeeData
+from employee_data import EmployeeList
 from exceptions import AppExceptions
+
 
 class Employee:
     def __init__(self, employee):
@@ -13,7 +15,16 @@ class Employee:
 
     def get_employee_by_id(self, employee_id):
         try:
-            show_emp_id = inout("Zadajte id zamestnanca: ").strip().lower())
+            emp_id = int(input("Zadajte ID zamestnanca: ").strip().lower())
+            selected_emp = next(e for e in employee_data if  e.id = emp_id, None)
+
+            if selected_emp:
+                EmployeeList.return_employee_data()
+
+            else: print('Neplatné ID.')
+        raise AppExceptions.ValueError("Zadajte ID zo zoznamu.!)
+
+
 
 
         for emp in self.employee:
@@ -21,7 +32,7 @@ class Employee:
                 return
 
     def show_emp_id(self):
-        show_emp_id = inout("Zadajte id zamestnanca: ").strip().lower())
+        show_emp_id = int(input("Zadajte ID zamestnanca: ").strip().lower())
 
         if show_emp_id not in return_employee_data():
             raise AppExceptions.ValueError("Neplatné id")
