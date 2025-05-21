@@ -19,6 +19,7 @@ class EmployeeData:
        return  (f'Zamestnanec: {self.id},{self.name} {self.surname}, Pracovné zaradenie: {self.job_classification}, '
                 f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}')
 
+
 class EmployeeList:
     def __init__(self, employee_list):
         self.employee_list = employee_list
@@ -28,7 +29,7 @@ class EmployeeList:
            print(employee)
 
     def show_data(self):
-        # try:
+
             show_employees = input("Zobraziť zoznam zamestnancov (a/n): ").strip().lower()
 
             if show_employees not in ["a","n"]:
@@ -40,6 +41,8 @@ class EmployeeList:
 
             else:
                 print("Čauko, koniec programu.")
+
+
 
 
 
