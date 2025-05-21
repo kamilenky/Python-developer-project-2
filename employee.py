@@ -30,26 +30,3 @@ class Employee:
 
 
 
-        #
-        # for emp in self.employee:
-        #     if id.employee_id == employee_id:
-        #         return
-    #
-    # def show_emp_id(self):
-    #     show_emp_id = int(input("Zadajte ID zamestnanca: ").strip().lower())
-    #
-    #     if show_emp_id not in return_employee_data():
-    #         raise AppExceptions.ValueError("Neplatné id")
-    #
-    #     if show_emp_id == ...
-    #         self.get_employee_by_id
-    #         return show_emp_id
-    #
-    #
-    #
-    # def ReturnEmployeeName(self, employee_id):
-    #     pass
-    #     # get_id = input --> id / name
-    #     # print()
-    #
-    # def
