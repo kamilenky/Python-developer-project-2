@@ -2,7 +2,7 @@
 from employee_data import EmployeeData, EmployeeList
 from exceptions import AppExceptions
 from employee import Employee
-from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure,Requirements
+from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure, RequirementsList
 
 
 
@@ -20,14 +20,14 @@ employee_data = [
 
 
 reasons_1 = [
-    JobTenureProlonged(id=1, prolonged_tenure="ospravedlnená neprítomnosť zamestnanca"),
-    JobTenureProlonged(id=2, prolonged_tenure="výkon mimoriadnej služby")
+    RequirementsProlongedTenure(id=1, prolonged_tenure="ospravedlnená neprítomnosť zamestnanca"),
+    RequirementsProlongedTenure(id=2, prolonged_tenure="výkon mimoriadnej služby")
 ]
 
 
 reasons_2 = [
-    JobTenureShortened(id=1, shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu"),
-    JobTenureShortened(id=2, shortened_tenure="okamžité skončenie pracovného pomeru zamestnávateľom")
+    RequirementsShortenedTenure(id=1, shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu"),
+    RequirementsShortenedTenure(id=2, shortened_tenure="okamžité skončenie pracovného pomeru zamestnávateľom")
 ]
 
 
@@ -46,4 +46,7 @@ g.get_employee_by_id()
 
 
 # requirements.py section
-req = Requirements()
+req_1 = RequirementsList(reasons_1)
+req_2 = RequirementsList(reasons_2)
+req_1.show_requirements()
+req_2.show_requirements()
