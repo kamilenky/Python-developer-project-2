@@ -1,24 +1,36 @@
 # 1. the program asks for employee data input, displays employee data list, raises the exceptions
-from employee_data import EmployeeData
-from employee_data import EmployeeList
+from employee_data import EmployeeData, EmployeeList
 from exceptions import AppExceptions
 from employee import Employee
+from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure,Requirements
 
 
-class List:
-    def __init__(self):
 
-    employee_data = [
-        EmployeeData(id=1, name="Astérix", surname="Galois", job_classification="Opatrovateľ",
-                     contribution_amount_gross=2000,
-                     contribution_amount_net=1620),
-        EmployeeData(id=2, name="Obélix", surname="Gal", job_classification="Sociálny pracovník",
-                     contribution_amount_gross=1500,
-                     contribution_amount_net=1215),
-        EmployeeData(id=3, name="Scoobee", surname="Doo", job_classification="Inštruktor sociálnej rehabilitácie",
-                     contribution_amount_gross=2000,
-                     contribution_amount_net=1620)
-        ]
+employee_data = [
+    EmployeeData(id=1, name="Astérix", surname="Galois", job_classification="Opatrovateľ",
+                 contribution_amount_gross=2000,
+                 contribution_amount_net=1620),
+    EmployeeData(id=2, name="Obélix", surname="Gal", job_classification="Sociálny pracovník",
+                 contribution_amount_gross=1500,
+                 contribution_amount_net=1215),
+    EmployeeData(id=3, name="Scoobee", surname="Doo", job_classification="Inštruktor sociálnej rehabilitácie",
+                 contribution_amount_gross=2000,
+                 contribution_amount_net=1620)
+]
+
+
+reasons_1 = [
+    JobTenureProlonged(id=1, prolonged_tenure="ospravedlnená neprítomnosť zamestnanca"),
+    JobTenureProlonged(id=2, prolonged_tenure="výkon mimoriadnej služby")
+]
+
+
+reasons_2 = [
+    JobTenureShortened(id=1, shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu"),
+    JobTenureShortened(id=2, shortened_tenure="okamžité skončenie pracovného pomeru zamestnávateľom")
+]
+
+
 # exceptions for employee_data.py section
 
 try:
@@ -31,3 +43,7 @@ except AppExceptions.InvalidInputError as error:
 
 g = Employee(employee_data)
 g.get_employee_by_id()
+
+
+# requirements.py section
+req = Requirements()
