@@ -4,7 +4,7 @@ from exceptions import AppExceptions
 from employee import Employee
 from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure, RequirementsList
 
-
+# Section: Lists - employee_data.py
 
 employee_data = [
     EmployeeData(id=1, name="Astérix", surname="Galois", job_classification="Opatrovateľ",
@@ -19,7 +19,7 @@ employee_data = [
 ]
 
 
-# exceptions for employee_data.py section
+# Section: User Interaction - show_employee.py
 
 try:
     e = EmployeeList(employee_data)
@@ -28,6 +28,8 @@ try:
 except AppExceptions.InvalidInputError as error:
     print("Nesprávny údaj.", error)
 
+
+# Section: User Interaction - employee.py
 
 # g = Employee(employee_data)
 # g.get_employee_by_id()
@@ -50,5 +52,8 @@ reasons_2 = [
 req_1 = RequirementsList(reasons_1)
 req_2 = RequirementsList(reasons_2)
 
-req_1.show_requirements("\nZobraziť dôvody na predĺženie zmluvy?: ")
-req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
+prolonged = req_1.show_requirements("\nZobraziť dôvody na predĺženie zmluvy?: ")
+shortened = req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
+
+if prolonged == "n" and shortened == "n":
+    print("...")
