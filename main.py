@@ -19,6 +19,22 @@ employee_data = [
 ]
 
 
+# exceptions for employee_data.py section
+
+try:
+    e = EmployeeList(employee_data)
+    e.show_data()
+
+except AppExceptions.InvalidInputError as error:
+    print("Nesprávny údaj.", error)
+
+
+# g = Employee(employee_data)
+# g.get_employee_by_id()
+
+
+# Section: Lists - requirements.py
+
 reasons_1 = [
     RequirementsProlongedTenure(id=1, prolonged_tenure="ospravedlnená neprítomnosť zamestnanca"),
     RequirementsProlongedTenure(id=2, prolonged_tenure="výkon mimoriadnej služby")
@@ -30,23 +46,9 @@ reasons_2 = [
     RequirementsShortenedTenure(id=2, shortened_tenure="okamžité skončenie pracovného pomeru zamestnávateľom")
 ]
 
-
-# exceptions for employee_data.py section
-
-try:
-    e = EmployeeList(employee_data)
-    e.show_data()
-
-except AppExceptions.InvalidInputError as error:
-    print("Nesprávny údaj.", error)
-
-
-g = Employee(employee_data)
-g.get_employee_by_id()
-
-
-# requirements.py section
+# Section: User Interaction - requirements.py
 req_1 = RequirementsList(reasons_1)
 req_2 = RequirementsList(reasons_2)
-req_1.show_requirements()
-req_2.show_requirements()
+
+req_1.show_requirements("\nZobraziť dôvody na predĺženie zmluvy?: ")
+req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
