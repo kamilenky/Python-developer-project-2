@@ -11,10 +11,8 @@ from exceptions import AppExceptions
 
 
 class Employee:
-    def __init__(self, employee):
-        self.employee = employee
-
-
+    def __init__(self, employee_data):
+        self.employee_data = employee_data
 
     def get_employee_by_id(self):
         try:
@@ -22,7 +20,8 @@ class Employee:
             selected_emp = next((e for e in self.employee_data if  e.id == emp_id), None)
 
             if selected_emp:
-                return EmployeeList.return_employee_data()
+                print(f"{selected_emp}")
+                return selected_emp
 
             else: print('Neplatné ID.')
         except AppExceptions.ValueError:
