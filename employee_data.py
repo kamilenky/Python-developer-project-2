@@ -40,7 +40,8 @@ class EmployeeList:
                 return show_employees
 
             else:
-                print("Čauko, koniec programu.")
+                print("...")
+
 
 
 
