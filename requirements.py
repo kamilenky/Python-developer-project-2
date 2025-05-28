@@ -11,7 +11,6 @@ class RequirementsList:
             print(rl)
 
     def show_requirements(self, prompt_text="\nZobraziť dôvody na predĺženie/skrátenie zmluvy? (a/n): "):
-
         show_requirements = input(prompt_text).strip().lower()
 
         if show_requirements not in ["a", "n"]:
@@ -19,13 +18,8 @@ class RequirementsList:
 
         if show_requirements == "a":
                 self.return_requirements_list()
-                return show_requirements
 
-
-        else:
-            req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
-            exit()
-
+        return show_requirements
 
 
 class RequirementsProlongedTenure:
