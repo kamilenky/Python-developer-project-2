@@ -59,9 +59,11 @@ shortened = req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: 
 
 if prolonged == "n" and shortened == "n":
     print("...")
+else:
+    if prolonged == "a":
+        r_choice_1 = RequirementsById(reasons_1)
+        r_choice_1.get_requirements_by_id("\nVyberte podmienku na predĺženie zmluvy: ")
 
-r_choice_1 = RequirementsById(reasons_1)
-r_choice_1.get_requirements_by_id()
-
-r_choice_2 = RequirementsById(reasons_2)
-r_choice_2.get_requirements_by_id()
+    if shortened == "a":
+        r_choice_2 = RequirementsById(reasons_2)
+        r_choice_2.get_requirements_by_id("\nVyberte podmienku na skrátenie zmluvy: ")
