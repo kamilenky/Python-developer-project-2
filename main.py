@@ -31,8 +31,8 @@ except AppExceptions.InvalidInputError as error:
 
 # Section: User Interaction - employee.py
 
-# g = Employee(employee_data)
-# g.get_employee_by_id()
+g = Employee(employee_data)
+g.get_employee_by_id()
 
 
 # Section: Lists - requirements.py
