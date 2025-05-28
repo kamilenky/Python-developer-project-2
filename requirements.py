@@ -42,16 +42,17 @@ class RequirementsShortenedTenure:
 
 
 class RequirementsById:
-    def __init__(self):
-        self.requirements = requirements
+    def __init__(self, requirements_list):
+        self.requirements_list = requirements_list
 
-    def get_requirements_1_by_id(self):
+    def get_requirements_by_id(self):
         try:
-            req_1_id = int(input("Vyberte podmienku pre...Zadajte číslo: ")).strip().lower()
-            selected_req_1_id = next((r for r in self.reasons_1 if r.id == req_1_id), None)
+            req_id = int(input("Vyberte podmienku. Zadajte číslo: "))
+            selected_req_id = next((r for r in self.requirements_list if r.id == req_id), None)
 
-            if selected_req_1_id:
-                return RequirementsList.return_requirements_list()
+            if selected_req_id:
+                print(f"Podmienka: {selected_req_id}")
+                return selected_req_id
 
             else:
                 print('Neplatné číslo.')
