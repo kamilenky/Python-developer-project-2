@@ -1,27 +1,6 @@
 # zostavi list podmienok pre pre predlzenie zmluvy/skratenie zmluvy
 from exceptions import AppExceptions
 
-
-
-
-class RequirementsProlongedTenure:
-    def __init__(self, id, prolonged_tenure) -> None:
-        self.id = id
-        self.prolonged_tenure = prolonged_tenure
-
-    def __str__(self):
-        return f"\nVyberte dôvod - bla bla: \n{self.id}, {self.prolonged_tenure}"
-
-
-class RequirementsShortenedTenure:
-    def __init__(self, id, shortened_tenure) -> None:
-        self.id = id
-        self.shortened_tenure = shortened_tenure
-
-    def __str__(self):
-        return f"\n Vyberte dôvod - ble ble: \n {self.id}, {self.shortened_tenure}"
-
-
 class RequirementsList:
     def __init__(self, requirements_list):
         self.requirements_list = requirements_list
@@ -31,9 +10,9 @@ class RequirementsList:
         for rl in self.requirements_list:
             print(rl)
 
-    def show_requirements(self):
+    def show_requirements(self, prompt_text="\nZobraziť dôvody na predĺženie/skrátenie zmluvy? (a/n): "):
 
-        show_requirements = input("Zobraziť dôvody ukončenia zmluvy? (a/n): ").strip().lower()
+        show_requirements = input(prompt_text).strip().lower()
 
         if show_requirements not in ["a", "n"]:
                 raise AppExceptions.InvalidInputError("Zadajte iba 'a' alebo 'n'")
@@ -41,9 +20,30 @@ class RequirementsList:
         if show_requirements == "a":
                 self.return_requirements_list()
                 return show_requirements
+
+
         else:
-            print("ešte neviem, kam to presmerujem")
+            req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
             exit()
+
+
+
+class RequirementsProlongedTenure:
+    def __init__(self, id, prolonged_tenure) -> None:
+        self.id = id
+        self.prolonged_tenure = prolonged_tenure
+
+    def __str__(self):
+        return f"\nPredĺženie zmluvy: {self.id}. {self.prolonged_tenure}"
+
+
+class RequirementsShortenedTenure:
+    def __init__(self, id, shortened_tenure) -> None:
+        self.id = id
+        self.shortened_tenure = shortened_tenure
+
+    def __str__(self):
+        return f"\nSkrátenie zmluvy: {self.id}. {self.shortened_tenure}"
 
 
 
@@ -65,6 +65,7 @@ class RequirementsById:
         except AppExceptions.ValueError:
             print("Zadajte číslo zo zoznamu.")
 
+
 reasons_1 = [
     RequirementsProlongedTenure(id=1, prolonged_tenure="ospravedlnená neprítomnosť zamestnanca"),
     RequirementsProlongedTenure(id=2, prolonged_tenure="výkon mimoriadnej služby")
@@ -79,5 +80,6 @@ reasons_2 = [
 # requirements.py section
 req_1 = RequirementsList(reasons_1)
 req_2 = RequirementsList(reasons_2)
-req_1.show_requirements()
-req_2.show_requirements()
+
+req_1.show_requirements("\nZobraziť dôvody na predĺženie zmluvy?: ")
+req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
