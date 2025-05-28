@@ -2,7 +2,7 @@
 from employee_data import EmployeeData, EmployeeList
 from exceptions import AppExceptions
 from employee import Employee
-from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure, RequirementsList
+from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure, RequirementsList, RequirementsById
 
 # Section: Lists - employee_data.py
 
@@ -48,12 +48,20 @@ reasons_2 = [
     RequirementsShortenedTenure(id=2, shortened_tenure="okamžité skončenie pracovného pomeru zamestnávateľom")
 ]
 
-# Section: User Interaction - requirements.py
+#Section: User Interaction - requirements.py
+
 req_1 = RequirementsList(reasons_1)
 req_2 = RequirementsList(reasons_2)
 
 prolonged = req_1.show_requirements("\nZobraziť dôvody na predĺženie zmluvy?: ")
 shortened = req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
 
+
 if prolonged == "n" and shortened == "n":
     print("...")
+
+r_choice_1 = RequirementsById(reasons_1)
+r_choice_1.get_requirements_by_id()
+
+r_choice_2 = RequirementsById(reasons_2)
+r_choice_2.get_requirements_by_id()
