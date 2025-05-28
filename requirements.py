@@ -45,9 +45,9 @@ class RequirementsById:
     def __init__(self, requirements_list):
         self.requirements_list = requirements_list
 
-    def get_requirements_by_id(self):
+    def get_requirements_by_id(self, prompt_text="\nVyberte podmienku. Zadajte číslo: "):
         try:
-            req_id = int(input("Vyberte podmienku. Zadajte číslo: "))
+            req_id = int(input(prompt_text))
             selected_req_id = next((r for r in self.requirements_list if r.id == req_id), None)
 
             if selected_req_id:
