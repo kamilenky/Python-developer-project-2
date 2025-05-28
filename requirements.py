@@ -65,21 +65,3 @@ class RequirementsById:
         except AppExceptions.ValueError:
             print("Zadajte číslo zo zoznamu.")
 
-
-reasons_1 = [
-    RequirementsProlongedTenure(id=1, prolonged_tenure="ospravedlnená neprítomnosť zamestnanca"),
-    RequirementsProlongedTenure(id=2, prolonged_tenure="výkon mimoriadnej služby")
-]
-
-
-reasons_2 = [
-    RequirementsShortenedTenure(id=1, shortened_tenure="zamestnanec je preradený na inú pracovnú pozíciu"),
-    RequirementsShortenedTenure(id=2, shortened_tenure="okamžité skončenie pracovného pomeru zamestnávateľom")
-]
-
-# requirements.py section
-req_1 = RequirementsList(reasons_1)
-req_2 = RequirementsList(reasons_2)
-
-req_1.show_requirements("\nZobraziť dôvody na predĺženie zmluvy?: ")
-req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
