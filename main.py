@@ -4,24 +4,25 @@ from exceptions import AppExceptions
 from employee import Employee
 from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure, RequirementsList, RequirementsById
 from datetime import datetime
+from dataclasses import dataclass
 
 
 
 # Section: Lists - employee_data.py
 
-start_date = datetime.strptime("01-01-2025", "%d-%m-%y")
+# start_date = datetime.strptime("01-01-2025", "%d-%m-%y")
 
 
 employee_data = [
     EmployeeData(id=1, name="Astérix", surname="Galois", job_classification="Opatrovateľ",
                  contribution_amount_gross=2000,
-                 contribution_amount_net=1620, start_date=datetime(2025,1,1)),
+                 contribution_amount_net=1620, start_date=datetime(2025, 1,1)),
     EmployeeData(id=2, name="Obélix", surname="Gal", job_classification="Sociálny pracovník",
                  contribution_amount_gross=1500,
-                 contribution_amount_net=1215, start_date=datetime(2025,1,1)),
+                 contribution_amount_net=1215, start_date=datetime.strptime("01-01-2025", "%d-%m-%Y")),
     EmployeeData(id=3, name="Scoobee", surname="Doo", job_classification="Inštruktor sociálnej rehabilitácie",
                  contribution_amount_gross=2000,
-                 contribution_amount_net=1620, start_date=datetime(2025,1,1))
+                 contribution_amount_net=1620, start_date=datetime.strptime("01-01-2025", "%d-%m-%Y"))
 ]
 
 
