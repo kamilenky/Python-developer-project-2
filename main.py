@@ -9,20 +9,19 @@ from datetime import datetime
 
 # Section: Lists - employee_data.py
 
-custom_date = datetime.strptime("01-01-2025", "%d-%m-%y")
-employee_data[0] = []
-employee_data.append(custom_date)
+start_date = datetime.strptime("01-01-2025", "%d-%m-%y")
+
 
 employee_data = [
     EmployeeData(id=1, name="Astérix", surname="Galois", job_classification="Opatrovateľ",
                  contribution_amount_gross=2000,
-                 contribution_amount_net=1620),
+                 contribution_amount_net=1620, start_date=datetime(2025,1,1)),
     EmployeeData(id=2, name="Obélix", surname="Gal", job_classification="Sociálny pracovník",
                  contribution_amount_gross=1500,
-                 contribution_amount_net=1215),
+                 contribution_amount_net=1215, start_date=datetime(2025,1,1)),
     EmployeeData(id=3, name="Scoobee", surname="Doo", job_classification="Inštruktor sociálnej rehabilitácie",
                  contribution_amount_gross=2000,
-                 contribution_amount_net=1620)
+                 contribution_amount_net=1620, start_date=datetime(2025,1,1))
 ]
 
 
