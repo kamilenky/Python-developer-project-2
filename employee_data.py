@@ -16,11 +16,12 @@ class EmployeeData:
         self.contribution_amount_gross = contribution_amount_gross
         self.contribution_amount_net = contribution_amount_net
         self.start_date = start_date
+        self.date_str = date_str
 
     def __str__(self):
         date_str = self.start_date.strftime("%d-%m-%y") if self.start_date else "%Y-%m-%d"
         return (f'Zamestnanec: {self.id},{self.name} {self.surname}, Pracovné zaradenie: {self.job_classification},'
-            f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}, Začiatok zmluvy: {self.start_date}')
+            f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}, Začiatok zmluvy: {self.date_str}')
 
 
 class EmployeeList:
