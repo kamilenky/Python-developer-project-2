@@ -3,8 +3,15 @@ from employee_data import EmployeeData, EmployeeList
 from exceptions import AppExceptions
 from employee import Employee
 from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure, RequirementsList, RequirementsById
+from datetime import datetime
+
+
 
 # Section: Lists - employee_data.py
+
+custom_date = datetime.strptime("01-01-2025", "%d-%m-%y")
+employee_data[0] = []
+employee_data.append(custom_date)
 
 employee_data = [
     EmployeeData(id=1, name="Astérix", surname="Galois", job_classification="Opatrovateľ",
