@@ -10,7 +10,7 @@ from dataclasses import dataclass
 
 # Section: Lists - employee_data.py
 
-# start_date = datetime.strptime("01-01-2025", "%d-%m-%y")
+
 
 
 employee_data = [
