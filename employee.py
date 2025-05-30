@@ -1,6 +1,5 @@
 # 2. employee.py section
 # the user will choose the employee id and the program will return the data of particular employee
-# the program will return the em
 # input: y/n answer for displaying the data list
 # output: displays employee data list
 
