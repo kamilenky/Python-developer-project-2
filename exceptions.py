@@ -1,3 +1,4 @@
+# stores the exceptions
 class AppExceptions(Exception):
     pass
 
