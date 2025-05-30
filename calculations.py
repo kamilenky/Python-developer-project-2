@@ -3,6 +3,7 @@
 # nie je dokoncena
 # chcem pridat dalsie polozky do def print_summary
 # chcem prepojit vstupy z employee_data, requirements
+#calculations.py je zatial jedina cast, ktora sa nevola z main.py
 
 
 from datetime import datetime, timedelta
