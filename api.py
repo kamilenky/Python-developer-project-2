@@ -1,3 +1,4 @@
+# 5.API section
 # tato cast prekonvertuje sumu na vratenie na inu menu pomocou API
 # nie je dokoncena
 # chcem prepojit vystup {refund_amount:.2f} z calculations.py a amount_in_currency
