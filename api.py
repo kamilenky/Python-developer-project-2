@@ -7,12 +7,18 @@ import requests
 
 
 def get_exchange_rate(base="EUR", target="CZK"):
-    url = f"https://api.exchangerate-api.com/v4/latest/{base}"
-    response = requests.get(url)
-    data = response.json()
-    return data["rates"].get(target)
+    try:
+        url = f"https://api.exchangerate-api.com/v4/latest/{base}"
+        response = requests.get(url)
+        data = response.json()
+        return data["rates"].get(target)
+    else Exception as e:
+        print("Chyba - API")
+        return None
 
-# Usage
-rate = get_exchange_rate("EUR", "CZK")
-amount_in_currency =  1 * rate
-print(f"Refund in CZK: {amount_in_currency:.2f}")
+
+
+# # Usage
+# rate = get_exchange_rate("EUR", "CZK")
+# amount_in_currency = 1 * rate
+# print(f"Refund in CZK: {amount_in_currency:.2f}")
