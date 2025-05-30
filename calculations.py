@@ -4,6 +4,7 @@
 # chcem prepojit vstupy z employee_data, requirements
 
 from datetime import datetime, timedelta
+import csv
 
 
 class CalculateRefund:
@@ -49,6 +50,21 @@ class CalculateRefund:
         print(f"Odpracované dni: {days_worked}")
         print(f"Zostávajúce dni: {days_remaining_part}")
         print(f"Vrátená suma zamestnávateľovi: {refund_amount:.2f} EUR")
+
+    def to_dict_summary(self):
+        return {"Začiatok zmluvy": self.start_date.strftime('%d.%m.%Y'),
+                "Plánovaný koniec zmluvy": self.end_date.strftime('%d.%m.%Y')
+                "Skutočný dátum ukončenia": termination_date.strftime('%d.%m.%Y'),
+                "Vyplatená suma": (self.total_paid:.2f) EUR,
+                "Odpracované dni": days_worked,
+                "Zostávajúce dni": days_remaining_part,
+                "Vrátená suma zamestnávateľovi": (refund_amount:.2f) EUR,
+        }
+
+ with open("summary.csv", "w", newline="", encoding="utf-8") as csvfile:
+    fieldnames = ["Začiatok zmluvy", "Plánovaný koniec zmluvy", "Skutočný dátum ukončenia", "Vyplatená suma",
+                          "Odpracované dni", "Zostávajúce dni", "Vrátená suma zamestnávateľovi"]
+
 
 
 
