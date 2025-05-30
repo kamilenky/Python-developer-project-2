@@ -1,5 +1,5 @@
 # 1. the program asks for employee data input, displays employee data list, raises the exceptions
-# k tejto casti by som chela pridat aj volania z calculations.py
+# k tejto casti by som chela pridat aj volania z calculations.py, calculations.py je zatial jedina cast, ktora sa nevola z main.py
 # program vyexportuje employee_data to CSV.Je to len skuska prace s csv, chcela by som aby sa v buducnosti importoval zoznam zamestnancov do listu/prip. prepisal list
 
 
