@@ -15,7 +15,7 @@ class Employee:
 
     def get_employee_by_id(self):
         try:
-            emp_id = int(input("Zadajte ID zamestnanca: ").strip().lower())
+            emp_id = int(input("Zadajte ID zamestnanca. Zadajte číslo: ").strip().lower())
             selected_emp = next((e for e in self.employee_data if  e.id == emp_id), None)
 
             if selected_emp:
