@@ -71,19 +71,19 @@ reasons_2 = [
 req_1 = RequirementsList(reasons_1)
 req_2 = RequirementsList(reasons_2)
 
-prolonged = req_1.show_requirements("\nZobraziť dôvody na predĺženie zmluvy?: ")
-shortened = req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy?: ")
+prolonged = req_1.show_requirements("\nZobraziť dôvody na predĺženie zmluvy? (a/n): ")
+shortened = req_2.show_requirements("\nZobraziť dôvody na skrátenie zmluvy? (a/n): ")
 
 if prolonged == "n" and shortened == "n":
     print("...")
 else:
     if prolonged == "a":
         r_choice_1 = RequirementsById(reasons_1)
-        r_choice_1.get_requirements_by_id("\nVyberte podmienku na predĺženie zmluvy: ")
+        r_choice_1.get_requirements_by_id("\nVyberte podmienku na predĺženie zmluvy. Zadajte číslo: ")
 
     if shortened == "a":
         r_choice_2 = RequirementsById(reasons_2)
-        r_choice_2.get_requirements_by_id("\nVyberte podmienku na skrátenie zmluvy: ")
+        r_choice_2.get_requirements_by_id("\nVyberte podmienku na skrátenie zmluvy. Zadajte číslo: ")
 
 
 
