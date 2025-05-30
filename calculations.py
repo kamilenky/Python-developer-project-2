@@ -10,13 +10,13 @@ class CalculateRefund:
     def __init__(self, start_date: datetime, total_paid: float):
         self.start_date = start_date
         self.contract_duration = 3*365
-        self.refund_amount = refund_amount
         self.total_paid = total_paid
         self.end_date = self.start_date + timedelta(days=self.contract_duration)
 
+
     def calculate_refund(self):
         try:
-            termination_date_input = input("Zadajte dátum ukončenia zmluvy: (YYYY-MM-DD) ").strip()
+            termination_date_input = input("Zadajte dátum ukončenia zmluvy (YYYY-MM-DD): ").strip()
             termination_date = datetime.strptime(termination_date_input, "%Y-%m-%d")
 
             if termination_date < self.start_date:
