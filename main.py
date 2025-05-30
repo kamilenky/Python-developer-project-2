@@ -1,4 +1,4 @@
-# 1. the program asks for employee data input, displays employee data list, raises the exceptions
+# 1. the section store the lists and calls other modules
 # k tejto casti by som chela pridat aj volania z calculations.py, calculations.py je zatial jedina cast, ktora sa nevola z main.py
 # program vyexportuje employee_data to CSV.Je to len skuska prace s csv, chcela by som aby sa v buducnosti importoval zoznam zamestnancov do listu/prip. prepisal list
 
@@ -10,7 +10,7 @@ from exceptions import AppExceptions
 from employee import Employee
 from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure, RequirementsList, RequirementsById
 from datetime import datetime, timedelta
-import csv
+
 
 
 
