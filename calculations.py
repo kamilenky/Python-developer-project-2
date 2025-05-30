@@ -63,16 +63,21 @@ class CalculateRefund:
 
  with open("summary.csv", "w", newline="", encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(["Začiatok zmluvy": self.start_date.strftime('%d.%m.%Y'),
-                "Plánovaný koniec zmluvy": self.end_date.strftime('%d.%m.%Y')
-                "Skutočný dátum ukončenia": termination_date.strftime('%d.%m.%Y'),
-                "Vyplatená suma": (self.total_paid:.2f) EUR,
-                "Odpracované dni": days_worked,
-                "Zostávajúce dni": days_remaining_part,
-                "Vrátená suma zamestnávateľovi": (refund_amount:.2f) EUR,
-        }])
+    writer.writerow(["Začiatok zmluvy",
+                     "Plánovaný koniec zmluvy",
+                     "Skutočný dátum ukončenia",
+                     "Vyplatená suma",
+                     "Odpracované dni",
+                     "Zostávajúce dni",
+                     "Vrátená suma zamestnávateľovi"])
 
-
+    writer.writerow([self.start_date.strftime('%d.%m.%Y'),
+                     self.end_date.strftime('%d.%m.%Y'),
+                     termination_date.strftime('%d.%m.%Y'),
+                     f"{self.total_paid:.2f} EUR",
+                     days_worked,
+                     days_remaining_part,
+                     f"{refund_amount:.2f} EUR")]
 
 
 
