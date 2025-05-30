@@ -4,7 +4,9 @@
 # output: displays employee data list
 
 from exceptions import AppExceptions
-from dataclasses import dataclass
+from datetime import datetime, timedelta
+import csv
+
 
 
 class EmployeeData:
@@ -17,10 +19,23 @@ class EmployeeData:
         self.contribution_amount_gross = contribution_amount_gross
         self.contribution_amount_net = contribution_amount_net
         self.start_date = start_date
+        # self.end_date =  self.start_date.replace(year=self.start_date.year + 3)
 
     def __str__(self):
         return (f'Zamestnanec: {self.id},{self.name} {self.surname}, Pracovné zaradenie: {self.job_classification},'
                 f'Príspevok: {self.contribution_amount_gross}, Príspevok po zdanení: {self.contribution_amount_net}, Začiatok zmluvy: {self.start_date.strftime("%d-%m-%y")}')
+
+
+    def to_dict(self):
+        return {"ID": self.id,
+                "Meno": self.name,
+                "Priezvisko": self.surname,
+                "Pracovné zaradenie":self.job_classification,
+                "Príspevok": self.contribution_amount_gross,
+                "Príspevok po zdanení": self.contribution_amount_net,
+                "Začiatok zmluvy": self.start_date.strftime("%d-%m-%y")
+        }
+
 
 
 class EmployeeList:
