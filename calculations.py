@@ -10,6 +10,10 @@
 from datetime import datetime, timedelta
 import csv
 
+from requests.packages import target
+
+from api import get_exchange_rate
+
 
 class CalculateRefund:
     def __init__(self, start_date: datetime, total_paid: float):
@@ -36,6 +40,9 @@ class CalculateRefund:
             amount_day_net = self.total_paid / self.contract_duration
             refund_amount = amount_day_net * days_remaining_part
 
+            rate = get_exchange_rate("EUR", "CZK")
+            refund_currency = round(refund_amount * rate, 2) if rate else None
+
             self.print_summary(termination_date, days_worked, days_remaining_part, refund_amount)
             return refund_amount
 
@@ -52,6 +59,7 @@ class CalculateRefund:
         print(f"Odpracované dni: {days_worked}")
         print(f"Zostávajúce dni: {days_remaining_part}")
         print(f"Vrátená suma zamestnávateľovi: {refund_amount:.2f} EUR")
+        print(f"Vrátená suma v zvolenej mene: {refund_currency:.2f}")
 
         with open("summary.csv", "w", newline="", encoding="utf-8") as csvfile:
             writer = csv.writer(csvfile)
