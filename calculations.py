@@ -55,7 +55,7 @@ class CalculateRefund:
 # Employee's contract
 start_date = datetime(2025, 1, 1)
 total_paid = 2000  # EUR
-
+#
 # Create instance of calculator
 calc = CalculateRefund(start_date, total_paid)
 
