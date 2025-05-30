@@ -1,3 +1,4 @@
+# 4. calculations section
 # tato cast vypocita sumu na vratenie zamestnavatelovi
 # vyexportuje udaje v zhrnuti
 # nie je dokoncena
