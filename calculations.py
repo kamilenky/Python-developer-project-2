@@ -43,14 +43,14 @@ class CalculateRefund:
             rate = get_exchange_rate("EUR", "CZK")
             refund_currency = round(refund_amount * rate, 2) if rate else None
 
-            self.print_summary(termination_date, days_worked, days_remaining_part, refund_amount)
+            self.print_summary(termination_date, days_worked, days_remaining_part, refund_amount, refund_currency)
             return refund_amount
 
         except ValueError:
             print("Neplatný formát dátumu.")
             return
 
-    def print_summary(self, termination_date, days_worked, days_remaining_part, refund_amount):
+    def print_summary(self, termination_date, days_worked, days_remaining_part, refund_amount, refund_currency):
         print("\nPredčasné ukončenie zmluvy - Zhrnutie")
         print(f"Začiatok zmluvy: {self.start_date.strftime('%d.%m.%Y')}")
         print(f" Plánovaný koniec zmluvy: {self.end_date.strftime('%d.%m.%Y')}")
