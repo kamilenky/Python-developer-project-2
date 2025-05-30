@@ -12,7 +12,7 @@ def get_exchange_rate(base="EUR", target="CZK"):
         response = requests.get(url)
         data = response.json()
         return data["rates"].get(target)
-    else Exception as e:
+    except Exception as e:
         print("Chyba - API")
         return None
 
