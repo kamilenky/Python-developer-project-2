@@ -1,4 +1,6 @@
+# 3.requirements section
 # zostavi list podmienok pre pre predlzenie zmluvy/skratenie zmluvy
+
 from exceptions import AppExceptions
 
 class RequirementsList:
