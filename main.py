@@ -1,12 +1,16 @@
 # 1. the program asks for employee data input, displays employee data list, raises the exceptions
-# K tejto casti by som chela pridat aj volania z calculations.py
+# k tejto casti by som chela pridat aj volania z calculations.py
+# program vyexportuje
 
+
+from csv import DictWriter
 
 from employee_data import EmployeeData, EmployeeList
 from exceptions import AppExceptions
 from employee import Employee
 from requirements import RequirementsProlongedTenure, RequirementsShortenedTenure, RequirementsList, RequirementsById
 from datetime import datetime, timedelta
+import csv
 
 
 
@@ -34,6 +38,16 @@ try:
 
 except AppExceptions.InvalidInputError as error:
     print("Nesprávny údaj.", error)
+
+
+# Section: Export of EmployeeData to CSV
+with open("employees.csv", "w", newline="", encoding="utf-8") as csvfile:
+    fieldnames = ["ID", "Meno", "Priezvisko", "Pracovné zaradenie", "Príspevok", "Príspevok po zdanení", "Začiatok zmluvy"]
+    writer = DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+    for emp in employee_data:
+        writer.writerow(emp.to_dict())
 
 # Section: User Interaction - employee.py
 
