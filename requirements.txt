@@ -1,4 +1,4 @@
-#list of requirements
+# list of requirements
 certifi==2025.1.31
 charset-normalizer==3.4.1
 colorama==0.4.6
