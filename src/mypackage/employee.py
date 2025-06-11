@@ -3,8 +3,8 @@
 # input: y/n answer for displaying the data list
 # output: displays employee data list
 
-# from employee_data import EmployeeList
-# from exceptions import AppExceptions
+from employee_data import EmployeeList
+from exceptions import AppExceptions
 
 
 def greet():
