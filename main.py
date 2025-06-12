@@ -18,9 +18,16 @@ def main ():
     print("start")
     src.mypackage.employee.greet()
 
+    # shows employees list
     employee_manager = EmployeeManager()
     try:
         employee_manager.show_employees()
+    except exception as e:
+        print(f"Chyba: {e}")
+
+    # shows emloyee by id
+    try:
+        employee_manager.show_employee_by_id()
     except exception as e:
         print(f"Chyba: {e}")
 
