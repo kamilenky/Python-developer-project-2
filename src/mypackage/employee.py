@@ -5,12 +5,22 @@
 
 from employee_data import EmployeeList
 from exceptions import AppExceptions
+from dataclasses import dataclass
 
 
 def greet():
     print("test main.py - employee")
 
+@dataclass
 class EmployeeData:
+        id: int
+        name: str
+        surname: str
+        job_classification: str
+        contribution_amount_gross: str
+        contribution_amount_net: str
+        start_date: str
+
     def __init__(self, id, name, surname, job_classification, contribution_amount_gross, contribution_amount_net,
                  start_date):
         self.id = id
@@ -47,7 +57,7 @@ class EmployeeManager:
         for employee in self.employee_list:
             print(employee)
 
-    def show_data(self):
+    def show_employees(self):
 
         show_employees = input("Zobraziť zoznam zamestnancov (a/n): ").strip().lower()
 
@@ -61,7 +71,7 @@ class EmployeeManager:
         else:
             print("...")
 
-    def get_employee_by_id(self):
+    def show_employee_by_id(self):
         try:
             emp_id = int(input("Zadajte ID zamestnanca. Zadajte číslo: ").strip().lower())
             selected_emp = next((e for e in self.employee_data if  e.id == emp_id), None)
