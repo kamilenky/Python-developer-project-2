@@ -73,15 +73,15 @@ class EmployeeManager:
 
     def show_employee_by_id(self):
         try:
-            emp_id = int(input("Zadajte ID zamestnanca. Zadajte číslo: ").strip().lower())
-            selected_emp = next((e for e in self.employee_data if  e.id == emp_id), None)
+            employee_id = int(input("Zadajte ID zamestnanca. Zadajte číslo: ").strip().lower())
+            selected_employee = next((e for e in self.employee_data if  e.id == employee_id), None)
 
-            if selected_emp:
-                print(f"{selected_emp}")
-                return selected_emp
+            if selected_employee:
+                print(f"{selected_employee}")
+                return selected_employee
 
             else: print('Neplatné ID.')
-        except AppExceptions.ValueError:
+        except AppExceptions.InvalidInputError:
             print("Zadajte ID zo zoznamu.")
 
 
