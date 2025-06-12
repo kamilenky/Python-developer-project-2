@@ -43,19 +43,20 @@ class RefundCalculator:
             rate = get_exchange_rate("EUR", "EUR")
             refund_currency = round(refund_amount * rate, 2) if rate else None
 
-            self.print_summary(termination_date, days_worked, days_remaining_part, refund_amount, refund_currency)
+            self.print_summary(termination_date, salary_net, days_worked, days_remaining_part, refund_amount, refund_currency)
             return refund_amount
 
         except ValueError:
             print("Neplatný formát dátumu.")
             return
 
-    def print_summary(self, termination_date, days_worked, days_remaining_part, refund_amount, refund_currency):
+    def print_summary(self, termination_date, salary_net, days_worked, days_remaining_part, refund_amount, refund_currency):
         print("\nPredčasné ukončenie zmluvy - Zhrnutie")
         print(f"Začiatok zmluvy: {self.start_date.strftime('%d.%m.%Y')}")
         print(f"Plánovaný koniec zmluvy: {self.end_date.strftime('%d.%m.%Y')}")
         print(f"Skutočný dátum ukončenia: {termination_date.strftime('%d.%m.%Y')}")
-        print(f"Vyplatená suma v hrubom: {self.total_paid:.2f} EUR")
+        print(f"Vyplatená suma v hrubom: {salary_net:.2f} EUR")
+        print(f"Vyplatená suma v čistom: {self.total_paid:.2f} EUR")
         print(f"Odpracované dni: {days_worked}")
         print(f"Zostávajúce dni: {days_remaining_part}")
         print(f"Vrátená suma zamestnávateľovi: {refund_amount:.2f} EUR")
@@ -85,10 +86,11 @@ class RefundCalculator:
 
  # Employee's contract
 start_date = datetime(2023, 1, 29)
-total_paid = 2000  # EUR
+salary_net = 2000
+total_paid = salary_net * 0.81
 
 # Create instance of calculator
-calc = CalculateRefund(start_date, total_paid)
+calc = RefundCalculator(start_date, total_paid)
 
 # Perform calculation
 calc.calculate_refund()
