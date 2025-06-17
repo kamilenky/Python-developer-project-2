@@ -39,18 +39,20 @@ class RefundCalculator:
             days_remaining_part = self.contract_duration - days_worked
             amount_day_net = self.total_paid / self.contract_duration
             refund_amount = amount_day_net * days_remaining_part
+            back_to_employee = amount_day_net * days_worked
+        
 
             rate = get_exchange_rate("EUR", "EUR")
             refund_currency = round(refund_amount * rate, 2) if rate else None
 
-            self.print_summary(termination_date, salary_net, days_worked, days_remaining_part, refund_amount, refund_currency)
+            self.print_summary(termination_date, salary_net, days_worked, days_remaining_part, refund_amount, back_to_employee, refund_currency)
             return refund_amount
 
         except ValueError:
             print("Neplatný formát dátumu.")
             return
 
-    def print_summary(self, termination_date, salary_net, days_worked, days_remaining_part, refund_amount, refund_currency):
+    def print_summary(self, termination_date, salary_net, days_worked, days_remaining_part, refund_amount, back_to_employee, refund_currency):
         print("\nPredčasné ukončenie zmluvy - Zhrnutie")
         print(f"Začiatok zmluvy: {self.start_date.strftime('%d.%m.%Y')}")
         print(f"Plánovaný koniec zmluvy: {self.end_date.strftime('%d.%m.%Y')}")
@@ -60,6 +62,7 @@ class RefundCalculator:
         print(f"Odpracované dni: {days_worked}")
         print(f"Zostávajúce dni: {days_remaining_part}")
         print(f"Vrátená suma zamestnávateľovi: {refund_amount:.2f} EUR")
+        print(f'Zamestnancovi ostáva suma: {back_to_employee:.2f} EUR')
         print(f"Vrátená suma v zvolenej mene (EUR): {refund_currency:.2f}")
 
         with open("../summary.csv", "w", newline="", encoding="utf-8") as csvfile:
@@ -85,7 +88,7 @@ class RefundCalculator:
             ])
 
  # Employee's contract
-start_date = datetime(2023, 1, 29)
+start_date = datetime(2023, 1, 19)
 salary_net = 2000
 total_paid = salary_net * 0.81
 
